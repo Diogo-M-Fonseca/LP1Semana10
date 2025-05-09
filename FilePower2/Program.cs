@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace FilePower2
 {
@@ -6,7 +7,13 @@ namespace FilePower2
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            string sentence;
+            using StreamReader senteceWriter = new StreamReader("text.txt");
+
+            while ((sentence = senteceWriter.ReadLine()) != null)
+            {
+                Console.WriteLine(sentence);
+            }
         }
     }
 }
